@@ -1,0 +1,131 @@
+<form id="moument_form" action="/monument" method="POST" class="g-3 needs-validation" novalidate>
+    <div class="row my-2">
+        <div class="col">
+            <input type="text" class="form-control" name="owner_name" placeholder="Όνομα" required>
+            <div class="invalid-feedback">
+                Παρακαλώ Συμπληρώστε το πεδίο.
+            </div>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="owner_surname" placeholder="Επώνυμο" required>
+            <div class="invalid-feedback">
+                Παρακαλώ Συμπληρώστε το πεδίο.
+            </div>
+        </div>
+    </div>
+    <div class="row my-2">
+        <div class="col">
+            <input type="text" class="form-control" name="company_str_name" placeholder="Όνομα Οδού"
+                required>
+            <div class="invalid-feedback">
+                Παρακαλώ Συμπληρώστε το πεδίο.
+            </div>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="company_str_num" placeholder="Αριθμός"
+                required>
+            <div class="invalid-feedback">
+                Παρακαλώ Συμπληρώστε το πεδίο.
+            </div>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="company_zip" placeholder="ΤΚ" required>
+            <div class="invalid-feedback">
+                Παρακαλώ Συμπληρώστε το πεδίο.
+            </div>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="company_country" placeholder="Χώρα" required>
+            <div class="invalid-feedback">
+                Παρακαλώ Συμπληρώστε το πεδίο.
+            </div>
+        </div>
+    </div>
+    <div class="row my-2">
+        <div class="col-6">
+            <input type="text" class="form-control" name="company_name" placeholder="Όνομα Επιχείρησης"
+                required>
+            <div class="invalid-feedback">
+                Παρακαλώ Συμπληρώστε το πεδίο.
+            </div>
+        </div>
+    </div>
+    <div class="row my-2">
+        <div class="col">
+            <input type="text" class="form-control" name="company_website"
+                placeholder="Ιστότοπος Επιχείρησης" required>
+            <div class="invalid-feedback">
+                Παρακαλώ Συμπληρώστε το πεδίο.
+            </div>
+        </div>
+        <div class="col">
+            <input type="email" class="form-control" name="owner_email" placeholder="email@example.com"
+                required>
+            <div class="invalid-feedback">
+                Παρακαλώ Συμπληρώστε το πεδίο.
+            </div>
+        </div>
+    </div>
+    <div class="row my-2">
+        <div class="col">
+            <input type="text" class="form-control" name="owner_phone"
+                placeholder="Τηλέφωνο Επικοινωνίας" required>
+            <div class="invalid-feedback">
+                Παρακαλώ Συμπληρώστε το πεδίο.
+            </div>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="cpmpany_phone"
+                placeholder="Τηλέφωνο Επικοινωνίας Επιχείρησης" required>
+            <div class="invalid-feedback">
+                Παρακαλώ Συμπληρώστε το πεδίο.
+            </div>
+        </div>
+    </div>
+    <div class="row my-2">
+        <div class="col">
+            <label for="company_lng">Γεωγραφικό Μήκος</label>
+            <input type="text" class="form-control" id="company_lng" name="company_lng"
+                placeholder="Επιλέξτε σημείο στον χάρτη" required>
+            <div class="invalid-feedback">
+                Παρακαλώ επιλέξτε Σημείο στον Χάρτη.
+            </div>
+        </div>
+        <div class="col">
+            <label for="company_lat">Γεωγραφικό Πλάτος</label>
+            <input type="text" class="form-control" id="company_lat" name="company_lat"
+                placeholder="Επιλέξτε σημείο στον χάρτη" required>
+            <div class="invalid-feedback">
+                Παρακαλώ επιλέξτε Σημείο στον Χάρτη.
+            </div>
+        </div>
+        
+    </div>
+    <div class="row my-2">
+        <label>Ανεβάστε Φωτογραφίες</label>
+        <input type="file" class="form-control"id="pictures" name="pictures" required multiple  />
+    </div>
+    <button type="submit" class="btn btn-primary g-recaptcha" >Καταχώρηση</button>
+    <script>
+        // VALIDATION ------------------------------------------
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+</form>

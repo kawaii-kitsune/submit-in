@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Submit in: Πλατφόρμα Καταχώρησης Επιχείρησης</title>
+    <link rel="icon" type="image/png" href="./img/in.png">
+    <!-- <link rel="stylesheet" href="./font_awesome/fontawesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./main_css/index.css">
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./jq/jquery.min.js"></script>
+    <script src="./main_js/index.js"></script>
+</head>
+
+<body>
+    <main>
+        <%- include('partials/navbar.ejs') %>   
+        <%- include('partials/tabs-section.ejs') %>
+        <div class="row mx-2">
+            <section class="section form-section col">
+                <h3>Συμπληρώστε στην παρακάτω φόρμα</h3>
+                <p class="h7 text-muted">Σε αυτή τη φόρμα συμπληρώνεται τα στοιχεία της επιχείρησης σας για τη
+                    συλλογή στοιχείων σχετικά με τη μελέτη ηλεκτρονικής προώθησης τουρισμού.</p>
+                
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="monument" role="tabpanel" aria-labelledby="monument-tab">
+                            <%- include('forms/monuments.ejs') %>
+                    </div>
+                    <div class="tab-pane fade" id="housing" role="tabpanel" aria-labelledby="housing-tab">
+                        <%- include('forms/housing.ejs') %>
+                    </div>
+                    <div class="tab-pane fade" id="eat_n_drink" role="tabpanel" aria-labelledby="eat_n_drink-tab">
+                        <%- include('forms/eat_n_drink.ejs') %>
+                    </div>
+                    <div class="tab-pane fade" id="entertainment" role="tabpanel" aria-labelledby="entertainment-tab">
+                        <%- include('forms/entertainment.ejs') %>
+                    </div>
+                    <div class="tab-pane fade" id="parking" role="tabpanel" aria-labelledby="parking-tab">
+                        <%- include('forms/parking.ejs') %>
+                    </div>
+                    <div class="tab-pane fade" id="routes" role="tabpanel" aria-labelledby="routes-tab">
+                        <%- include('forms/routes.ejs') %>
+                    </div>
+                    <div class="tab-pane fade" id="services" role="tabpanel" aria-labelledby="services-tab">
+                        <%- include('forms/services.ejs') %>
+                    </div>
+                </div>    
+                
+            </section>
+            <section class="map-section col section">
+                <div class="" id="map">
+                </div>
+            </section>
+        </div>
+        <section>
+                
+                
+            
+        </section>
+    </main>
+    <%- include('partials/footer.ejs') %>
+    <!-- <script src="https://www.google.com/recaptcha/api.js"></script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= process.env.GOOGLE_MAPS_API_KEY %>&callback=initMap"
+        async defer></script>
+</body>
+
+</html>
